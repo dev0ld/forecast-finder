@@ -7,8 +7,67 @@
     <link rel="stylesheet" href="styles/style.css" />
   </head>
   <body>
-    <h1>Want to know the weather in your city today?</h1>
+    <header>
+      <h2>Forecast Finder</h2>
+    </header>
+    <main class="app">
+      <section>
+        <h1 id="current-city">OSLO</h1>
+      </section>
+      <div>
+        <p id="weather-info">Clear Sky</p>
+        <p>
+          Humidity: <span id="humidity-value">63%</span> , Windspeed:
+          <span id="windspeed-value">2,34km/h</span>
+        </p>
+        <p id="current-day-info">
+          <span id="date-and-day-info"> Monday 17. jan </span>
+          <span id="current-time-value"> 16:23 </span>
+        </p>
+      </div>
+      <div id="søkefelt">
+        <input type="search" />
+        <input type="submit" value="sett inn ikon" />
+      </div>
 
+      <section id="days-of-the-week">
+        <div id="current-day">
+          <p>Mon</p>
+          <p>17°C</p>
+          <p>icon</p>
+        </div>
+        <div id="current-day-2">
+          <p>Tue</p>
+          <p>17°C</p>
+          <p>icon</p>
+        </div>
+        <div id="current-day-2">
+          <p>Wen</p>
+          <p>17°C</p>
+          <p>icon</p>
+        </div>
+        <div id="current-day-3">
+          <p>Thu</p>
+          <p>17°C</p>
+          <p>icon</p>
+        </div>
+        <div id="current-day-4">
+          <p>Fri</p>
+          <p>17°C</p>
+          <p>icon</p>
+        </div>
+        <div id="current-day-5">
+          <p>Sat</p>
+          <p>17°C</p>
+          <p>icon</p>
+        </div>
+        <div id="current-day-6">
+          <p>Sun</p>
+          <p>17°C</p>
+          <p>icon</p>
+        </div>
+      </section>
+    </main>
     <footer>
       Coded by
       <a href="https://github.com/dev0ld" target="_blank"
