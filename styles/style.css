@@ -1,0 +1,98 @@
+body {
+  background: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+header {
+  text-align: center;
+  font-size: 1.75em;
+}
+
+footer {
+  margin-top: 20%;
+  font-size: 80%;
+  text-align: center;
+}
+
+.app {
+  background-color: #f0f5f7;
+  border-radius: 20px;
+  box-shadow: 5px 5px 15px 5px #888888;
+  padding: 2% 5%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.main-info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+#information-of-current-weather {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+#todays-temp {
+  font-weight: bold;
+}
+
+#current-day-display {
+  margin-top: 16%;
+  font-size: 1.3em;
+  font-weight: 30;
+}
+
+#search-tab {
+  padding-left: 12%;
+}
+
+#search-area {
+  border-radius: 0;
+  width: 13em;
+  height: 2.7em;
+  border: none;
+}
+
+#search-button {
+  border-radius: 0;
+  padding: 0;
+  width: 5em;
+  border: none;
+  background-color: #309edb;
+  border-radius: 8px;
+}
+
+#search-button,
+#search-area {
+  height: 4em;
+}
+
+#weather-info,
+#current-day-info {
+  color: #737373;
+}
+
+#current-day-info {
+  font-size: 1.75em;
+}
+
+#weather-values {
+  color: #86a3bf;
+  font-size: 0.8em;
+}
+
+#days-of-the-week {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  padding-bottom: 5%;
+  font-size: 1.4em;
+}
+
+#current-city {
+  font-size: 4em;
+  font-weight: 20;
+}
