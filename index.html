@@ -7,8 +7,82 @@
     <link rel="stylesheet" href="styles/style.css" />
   </head>
   <body>
-    <h1>Want to know the weather in your city today?</h1>
+    <header>
+      <h2>Forecast Finder</h2>
+    </header>
+    <main class="app">
+      <section class="main-info">
+        <h1 id="current-city">OSLO</h1>
+        <h3 id="current-day-display">
+          <p>Tempearture today: <span id="todays-temp"> 17°C</span></p>
+        </h3>
+      </section>
 
+      <section id="information-of-current-weather">
+        <div>
+          <p id="weather-info">Clear Sky</p>
+          <p id="weather-values">
+            Humidity: <span id="humidity-value">63%</span> , Windspeed:
+            <span id="windspeed-value">2,34km/h</span>
+          </p>
+          <p id="current-day-info">
+            <span id="date-and-day-info"> Monday 17. jan </span>
+            <span id="current-time-value"> 16:23 </span>
+          </p>
+        </div>
+        <form id="search-tab">
+          <input
+            type="search"
+            id="search-area"
+            placeholder="Enter a city.."
+            required
+          />
+          <input
+            type="submit"
+            value="🔍"
+            id="search-button"
+            aria-label="search-button"
+          />
+        </form>
+      </section>
+      <section id="days-of-the-week">
+        <div class="current-day">
+          <p>Mon</p>
+          <p>17°C</p>
+          <p>icon</p>
+        </div>
+        <div class="current-day-2">
+          <p>Tue</p>
+          <p>17°C</p>
+          <p>icon</p>
+        </div>
+        <div class="current-day-2">
+          <p>Wen</p>
+          <p>17°C</p>
+          <p>icon</p>
+        </div>
+        <div class="current-day-3">
+          <p>Thu</p>
+          <p>17°C</p>
+          <p>icon</p>
+        </div>
+        <div class="current-day-4">
+          <p>Fri</p>
+          <p>17°C</p>
+          <p>icon</p>
+        </div>
+        <div class="current-day-5">
+          <p>Sat</p>
+          <p>17°C</p>
+          <p>icon</p>
+        </div>
+        <div class="current-day-6">
+          <p>Sun</p>
+          <p>17°C</p>
+          <p>icon</p>
+        </div>
+      </section>
+    </main>
     <footer>
       Coded by
       <a href="https://github.com/dev0ld" target="_blank"
