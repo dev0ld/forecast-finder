@@ -14,22 +14,24 @@
       <section>
         <h1 id="current-city">OSLO</h1>
       </section>
-      <div>
-        <p id="weather-info">Clear Sky</p>
-        <p>
-          Humidity: <span id="humidity-value">63%</span> , Windspeed:
-          <span id="windspeed-value">2,34km/h</span>
-        </p>
-        <p id="current-day-info">
-          <span id="date-and-day-info"> Monday 17. jan </span>
-          <span id="current-time-value"> 16:23 </span>
-        </p>
-      </div>
-      <div id="søkefelt">
-        <input type="search" />
-        <input type="submit" value="sett inn ikon" />
-      </div>
 
+      <section id="information-of-current-weather">
+        <div>
+          <p id="weather-info">Clear Sky</p>
+          <p id="weather-values">
+            Humidity: <span id="humidity-value">63%</span> , Windspeed:
+            <span id="windspeed-value">2,34km/h</span>
+          </p>
+          <p id="current-day-info">
+            <span id="date-and-day-info"> Monday 17. jan </span>
+            <span id="current-time-value"> 16:23 </span>
+          </p>
+        </div>
+        <div id="search-tab">
+          <input type="search" id="search-area" placeholder="Enter a city.." required />
+          <input type="submit" value="ikon" id="search-button" />
+        </div>
+      </section>
       <section id="days-of-the-week">
         <div id="current-day">
           <p>Mon</p>
