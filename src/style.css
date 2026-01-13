@@ -44,6 +44,7 @@ footer {
   margin-top: 16%;
   font-size: 1.3em;
   font-weight: 30;
+  padding-left: 2em;
 }
 
 #search-tab {
@@ -93,6 +94,7 @@ footer {
 }
 
 #current-city {
-  font-size: 4em;
+  font-size: 3em;
   font-weight: 20;
+  margin-right: 2%;
 }
