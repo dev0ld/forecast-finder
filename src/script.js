@@ -2,7 +2,6 @@
 
 function updateWeatherData(response) {
   let temperature = Math.round(response.data.daily[0].temperature.day);
-  console.log(temperature);
 
   let temperatureElementDisplay = document.querySelector("#todays-temp");
   temperatureElementDisplay.innerHTML = temperature;
