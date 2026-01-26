@@ -32,3 +32,7 @@ function changeCity(event) {
 //get the search form
 let searchFormElement = document.querySelector("#search-tab");
 searchFormElement.addEventListener("submit", changeCity); //add eventlistner when submit is activated and call function
+
+
+
+citySearch("Oslo");
