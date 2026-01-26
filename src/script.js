@@ -1,11 +1,14 @@
 //functio that updates the city info based on user input search
 
 function updateWeatherData(response) {
-  let temperature = Math.round(response.data.daily[0].temperature.day);
+  let date = new Date(); //make a time element
+  let day = date.getDay();
+  let temperature = Math.round(response.data.daily[day].temperature.day);
   let city = response.data.city;
-  let weatherDescription = response.data.daily[0].condition.description;
-  let humidity = response.data.daily[0].temperature.humidity;
-  let wind = response.data.daily[0].wind.speed;
+  let weatherDescription = response.data.daily[day].condition.description;
+  let humidity = response.data.daily[day].temperature.humidity;
+  let wind = response.data.daily[day].wind.speed;
+
 
   let temperatureElementDisplay = document.querySelector("#todays-temp");
   temperatureElementDisplay.innerHTML = temperature;
@@ -21,8 +24,8 @@ function updateWeatherData(response) {
 
   let currentWindSpeed = document.querySelector("#windspeed-value");
   currentWindSpeed.innerHTML = wind;
+  
 }
-
 //function that gets the right city info form API
 function citySearch(city) {
   let key = "7332a37bdbaf02c4010b2fbtf44ao35f";
