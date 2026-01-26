@@ -8,7 +8,10 @@ function updateWeatherData(response) {
   let weatherDescription = response.data.daily[day].condition.description;
   let humidity = response.data.daily[day].temperature.humidity;
   let wind = response.data.daily[day].wind.speed;
-
+  let time =
+    date.getHours() +
+    ":" +
+    (date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes());
 
   let temperatureElementDisplay = document.querySelector("#todays-temp");
   temperatureElementDisplay.innerHTML = temperature;
@@ -24,7 +27,9 @@ function updateWeatherData(response) {
 
   let currentWindSpeed = document.querySelector("#windspeed-value");
   currentWindSpeed.innerHTML = wind;
-  
+
+  let currentTime = document.querySelector("#current-time-value");
+  currentTime.innerHTML = time;
 }
 //function that gets the right city info form API
 function citySearch(city) {
