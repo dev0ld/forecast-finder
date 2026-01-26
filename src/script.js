@@ -3,6 +3,9 @@
 function updateWeatherData(response) {
   let temperature = Math.round(response.data.daily[0].temperature.day);
   let city = response.data.city;
+  let weatherDescription = response.data.daily[0].condition.description;
+  let humidity = response.data.daily[0].temperature.humidity;
+  let wind = response.data.daily[0].wind.speed;
 
   let temperatureElementDisplay = document.querySelector("#todays-temp");
   temperatureElementDisplay.innerHTML = temperature;
@@ -10,7 +13,14 @@ function updateWeatherData(response) {
   let currentCity = document.querySelector("#current-city");
   currentCity.innerHTML = city;
 
+  let currentWeatherDescription = document.querySelector("#weather-info");
+  currentWeatherDescription.innerHTML = weatherDescription;
 
+  let currentHumidity = document.querySelector("#humidity-value");
+  currentHumidity.innerHTML = humidity;
+
+  let currentWindSpeed = document.querySelector("#windspeed-value");
+  currentWindSpeed.innerHTML = wind;
 }
 
 //function that gets the right city info form API
@@ -32,7 +42,5 @@ function changeCity(event) {
 //get the search form
 let searchFormElement = document.querySelector("#search-tab");
 searchFormElement.addEventListener("submit", changeCity); //add eventlistner when submit is activated and call function
-
-
 
 citySearch("Oslo");
