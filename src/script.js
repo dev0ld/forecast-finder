@@ -1,17 +1,12 @@
 //functio that updates the city info based on user input search
 
 function updateWeatherData(response) {
-  let date = new Date(); //make a time element
-  let day = date.getDay();
-  let temperature = Math.round(response.data.daily[day].temperature.day);
+  let temperature = Math.round(response.data.temperature.current);
   let city = response.data.city;
-  let weatherDescription = response.data.daily[day].condition.description;
-  let humidity = response.data.daily[day].temperature.humidity;
-  let wind = response.data.daily[day].wind.speed;
-  let time =
-    date.getHours() +
-    ":" +
-    (date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes());
+  let weatherDescription = response.data.condition.description;
+  let humidity = response.data.temperature.humidity;
+  let wind = response.data.wind.speed;
+  let date = new Date(response.data.time * 1000);
 
   let temperatureElementDisplay = document.querySelector("#todays-temp");
   temperatureElementDisplay.innerHTML = temperature;
@@ -28,15 +23,55 @@ function updateWeatherData(response) {
   let currentWindSpeed = document.querySelector("#windspeed-value");
   currentWindSpeed.innerHTML = wind;
 
-  let currentTime = document.querySelector("#current-time-value");
-  currentTime.innerHTML = time;
+  let currentDayInfo = document.querySelector("#date-and-day-info");
+  currentDayInfo.innerHTML = formatDate(date);
 }
+
+function formatDate(date) {
+  //array of all days of the week
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
+
+  let months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+
+  //get the right day
+  let day = days[date.getDay()];
+  let dato = date.getDate();
+  let month = months[date.getMonth()];
+
+  let time =
+    date.getHours() +
+    ":" +
+    (date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes());
+
+  return `${day} ${dato}.${month} ${time} `;
+}
+
 //function that gets the right city info form API
 function citySearch(city) {
   let key = "7332a37bdbaf02c4010b2fbtf44ao35f";
-  let rootURL = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${key}&units=metric`;
-  console.log(rootURL);
-  axios.get(rootURL).then(updateWeatherData);
+
+  //API url for forecast
+  //let forecastURL = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${key}&units=metric`;
+  //console.log(forecastURL);
+  //axios.get(forecastURL).then(updateWeatherData);
+
+  //API url for current day
+  let currentCityUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${key}&units=metric`;
+  axios.get(currentCityUrl).then(updateWeatherData);
+  console.log(currentCityUrl);
 }
 
 //function that handels change of city
