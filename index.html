@@ -14,6 +14,7 @@
     <main class="app">
       <section class="main-info">
         <h1 id="current-city"></h1>
+        <div id="current-icon"></div>
         <h3 id="current-day-display">
           <p>Tempearture today: <span id="todays-temp"></span>°C</p>
         </h3>
@@ -21,14 +22,17 @@
 
       <section id="information-of-current-weather">
         <div>
-          <p id="weather-info">Clear Sky</p>
+          <p id="weather-info"></p>
           <p id="weather-values">
-            Humidity: <span id="humidity-value">63%</span> , Windspeed:
-            <span id="windspeed-value">2,34km/h</span>
+            Humidity: <span id="humidity-value"></span>% , Windspeed:
+            <span id="windspeed-value"></span>km/h
           </p>
           <p id="current-day-info">
-            <span id="date-and-day-info"> Monday 17. jan </span>
-            <span id="current-time-value"> 16:23 </span>
+            <span id="date-and-day-info">
+              <span id="day"></span> <span id="date"></span>.
+              <span id="month"></span
+            ></span>
+            <span id="current-time-value"></span>
           </p>
         </div>
         <form id="search-tab">
