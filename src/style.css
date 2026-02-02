@@ -28,7 +28,11 @@ footer {
 
 .main-info {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+}
+
+#current-icon{
+  margin-top: 22%;
 }
 
 #information-of-current-weather {
