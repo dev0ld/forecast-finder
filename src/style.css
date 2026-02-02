@@ -36,11 +36,12 @@ footer {
 
 .currentTemp {
   font-size: 5em;
-  margin-top: 15%;
+  margin-top: 0.7em;;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 #current-icon img {
+  margin-top: 2.4em;
   height: 10em;
   width: 10em;
 }
