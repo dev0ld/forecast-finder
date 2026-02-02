@@ -31,8 +31,9 @@ footer {
   grid-template-columns: repeat(3, 1fr);
 }
 
-#current-icon{
-  margin-top: 22%;
+#current-icon img{
+  height: 10em;
+  width: 10em;
 }
 
 #information-of-current-weather {
