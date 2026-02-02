@@ -3,7 +3,8 @@ body {
   font-family: "Poppins", sans-serif;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  min-height: 100vh;
+  align-items: center;
 }
 
 header {
@@ -21,20 +22,22 @@ footer {
   background-color: #f0f5f7;
   border-radius: 20px;
   box-shadow: 5px 5px 15px 5px #888888;
-  padding: 2% 5%;
-  max-width: 600px;
-  margin: 0 auto;
+
+  width: min(900px, 92vw); /* gjør den større, men responsiv */
+  margin: 40px auto; /* litt luft rundt */
+  padding: 32px 48px; /* mer “kort”-følelse */
 }
 
 .main-info {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  justify-content: space-around;
+  justify-items: center;
 }
 
-.currentTemp{
-   font-size: 5em;
+.currentTemp {
+  font-size: 5em;
   margin-top: 15%;
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 #current-icon img {
@@ -43,15 +46,14 @@ footer {
 }
 
 #information-of-current-weather {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  justify-items: center;
+  justify-content: space-between;
 }
 
 #current-day-display {
-  margin-top: 16%;
   font-size: 1em;
   font-weight: 30;
-  padding-left: 2em;
 }
 
 #search-tab {
@@ -60,7 +62,7 @@ footer {
 
 #search-area {
   border-radius: 0;
-  width: 13em;
+  width: 15em;
   height: 2.7em;
   border: none;
 }
@@ -68,7 +70,7 @@ footer {
 #search-button {
   border-radius: 0;
   padding: 0;
-  width: 5em;
+  width: 3em;
   border: none;
   background-color: #309edb;
   border-radius: 8px;
@@ -94,8 +96,8 @@ footer {
 }
 
 #days-of-the-week {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  display: flex;
+  justify-content: space-around;
   padding-bottom: 5%;
   font-size: 1.4em;
 }
@@ -103,5 +105,5 @@ footer {
 #current-city {
   font-size: 4em;
   font-weight: 20;
-  margin-right: 2%;
+  margin-top: 10%;
 }
