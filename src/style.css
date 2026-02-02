@@ -28,7 +28,12 @@ footer {
 
 .main-info {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+}
+
+#current-icon img{
+  height: 10em;
+  width: 10em;
 }
 
 #information-of-current-weather {
@@ -42,7 +47,7 @@ footer {
 
 #current-day-display {
   margin-top: 16%;
-  font-size: 1.2em;
+  font-size: 1em;
   font-weight: 30;
   padding-left: 2em;
 }
@@ -94,7 +99,7 @@ footer {
 }
 
 #current-city {
-  font-size: 3em;
+  font-size: 4em;
   font-weight: 20;
   margin-right: 2%;
 }
