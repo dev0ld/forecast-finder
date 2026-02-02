@@ -7,6 +7,7 @@ function updateWeatherData(response) {
   let humidity = response.data.temperature.humidity;
   let wind = response.data.wind.speed;
   let date = new Date(response.data.time * 1000);
+  let icon = `<img src="${response.data.condition.icon_url}"></img>`;
 
   let temperatureElementDisplay = document.querySelector("#todays-temp");
   temperatureElementDisplay.innerHTML = temperature;
@@ -25,6 +26,9 @@ function updateWeatherData(response) {
 
   let currentDayInfo = document.querySelector("#date-and-day-info");
   currentDayInfo.innerHTML = formatDate(date);
+
+  let currentIcon = document.querySelector("#current-icon");
+  currentIcon.innerHTML = icon;
 }
 
 function formatDate(date) {
