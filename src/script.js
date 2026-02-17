@@ -1,5 +1,4 @@
-//functio that updates the city info based on user input search
-
+//function that updates the city info based on user input search
 function updateWeatherData(response) {
   let temperature = Math.round(response.data.temperature.current);
   let city = response.data.city;
@@ -29,6 +28,47 @@ function updateWeatherData(response) {
 
   let currentIcon = document.querySelector("#current-icon");
   currentIcon.innerHTML = icon;
+
+  getForecastData(response.data.city);
+}
+
+function formatDay(day) {
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
+  let dayofWeek = days[day.getDay()];
+
+  return dayofWeek;
+}
+
+//function that displays forecast
+function displayForcast(response) {
+  console.log(response.data);
+  let forecastElement = document.querySelector("#forecast");
+  let innertHtml = "";
+
+  response.data.daily.forEach((element, index) => {
+    if (index < 5) {
+      let date = new Date(element.time * 1000);
+      let day = formatDay(date);
+      let minTemp = Math.round(element.temperature.minimum);
+      let maxTemp = Math.round(element.temperature.maximum);
+      let icon = `<img src="${element.condition.icon_url}"></img>`;
+
+      innertHtml =
+        innertHtml +
+        `<div class="weather-forecast-day">
+        <div class="weather-forecast-date">${day}</div>
+        <div class="weather-forecast-icon">${icon}</div>
+        <div class="weather-forecast-temperatures">
+          <div class="weather-forecast-temperature">
+            <strong>${minTemp}º</strong>
+          </div>
+          <div class="weather-forecast-temperature">${maxTemp}º</div>
+        </div>
+      </div>`;
+    }
+  });
+
+  forecastElement.innerHTML = innertHtml;
 }
 
 function formatDate(date) {
@@ -67,11 +107,6 @@ function formatDate(date) {
 function citySearch(city) {
   let key = "7332a37bdbaf02c4010b2fbtf44ao35f";
 
-  //API url for forecast
-  //let forecastURL = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${key}&units=metric`;
-  //console.log(forecastURL);
-  //axios.get(forecastURL).then(updateWeatherData);
-
   //API url for current day
   let currentCityUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${key}&units=metric`;
   axios.get(currentCityUrl).then(updateWeatherData);
@@ -84,6 +119,14 @@ function changeCity(event) {
   let searchInput = document.querySelector("#search-area"); //get the search input from user
 
   citySearch(searchInput.value);
+}
+
+function getForecastData(city) {
+  let key = "7332a37bdbaf02c4010b2fbtf44ao35f";
+
+  //API url for forecast data
+  let apiURL = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${key}`;
+  axios.get(apiURL).then(displayForcast);
 }
 
 //get the search form

@@ -3,7 +3,8 @@ body {
   font-family: "Poppins", sans-serif;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  min-height: 100vh;
+  align-items: center;
 }
 
 header {
@@ -21,44 +22,48 @@ footer {
   background-color: #f0f5f7;
   border-radius: 20px;
   box-shadow: 5px 5px 15px 5px #888888;
-  padding: 2% 5%;
-  max-width: 600px;
-  margin: 0 auto;
+
+  width: min(900px, 92vw); /* gjør den større, men responsiv */
+  margin: 40px auto; /* litt luft rundt */
+  padding: 32px 48px; /* mer “kort”-følelse */
 }
 
 .main-info {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  justify-content: space-around;
+  justify-items: center;
 }
 
-#current-icon img{
+.currentTemp {
+  font-size: 5em;
+  margin-top: 0.7em;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+#current-icon img {
+  margin-top: 2.4em;
   height: 10em;
   width: 10em;
 }
 
 #information-of-current-weather {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-}
-
-#todays-temp {
-  font-weight: bold;
+  display: flex;
+  justify-items: center;
+  justify-content: space-between;
 }
 
 #current-day-display {
-  margin-top: 16%;
   font-size: 1em;
   font-weight: 30;
-  padding-left: 2em;
 }
 
 #search-tab {
-  padding-left: 12%;
+  padding-left: 10%;
 }
 
 #search-area {
   border-radius: 0;
-  width: 13em;
+  width: 15em;
   height: 2.7em;
   border: none;
 }
@@ -66,7 +71,7 @@ footer {
 #search-button {
   border-radius: 0;
   padding: 0;
-  width: 5em;
+  width: 3em;
   border: none;
   background-color: #309edb;
   border-radius: 8px;
@@ -80,10 +85,11 @@ footer {
 #weather-info,
 #current-day-info {
   color: #737373;
+  font-weight: 550;
 }
 
 #current-day-info {
-  font-size: 1.75em;
+  font-size: 1.5em;
 }
 
 #weather-values {
@@ -91,15 +97,40 @@ footer {
   font-size: 0.8em;
 }
 
-#days-of-the-week {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  padding-bottom: 5%;
-  font-size: 1.4em;
+.weatherforecast {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50px;
+}
+
+.weather-forecast-date {
+  text-align: center;
+  color: rgb(81, 122, 205);
+  font-size: 20px;
+  font-weight: bolder;
+  line-height: 20px;
+  margin-bottom: 10px;
+}
+
+.weather-forecast-icon {
+  font-size: 38px;
+  text-align: center;
+}
+.weather-forecast-temperatures {
+  text-align: center;
+  color: rgb(122, 154, 218);
+  margin-top: 10px;
+  display: flex;
+  font-size: larger;
+  justify-content: center;
+}
+
+.weather-forecast-temperature {
+  padding: 0 10px;
 }
 
 #current-city {
   font-size: 4em;
   font-weight: 20;
-  margin-right: 2%;
+  margin-top: 10%;
 }
